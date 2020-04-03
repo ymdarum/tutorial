@@ -48,3 +48,14 @@ for key, value in reviews.items():
 # Print all the entries with a low review score
 for item in lowscores:
     print(reviews[item])
+
+    # for-loop style to subset a dictionary
+forloop = {}
+for k in lowscores:
+    forloop[k] = reviews[k]
+
+# Add an appropriate method to retrieve the relevant items from the dictionary `reviews`
+dictcomp = {k: reviews.get(k) for k in lowscores}
+
+# Verify that these objects are equal
+print(forloop == dictcomp)
